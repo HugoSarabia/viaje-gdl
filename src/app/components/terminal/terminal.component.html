@@ -1,0 +1,20 @@
+<div class="station-container">
+  <div class="display-panel">
+    <div class="display-header">
+      <div class="led-indicator"></div>
+      <span class="station-title">INFORMACIÓN AL PASAJERO</span>
+      <div class="led-indicator"></div>
+    </div>
+    <div class="display-screen">
+      <div
+        class="scrolling-text"
+        [style.transform]="'translateX(' + scrollPosition() + 'px)'"
+        [style.display]="display()"
+        [style.transition]="isAnimating() ? 'transform 0.1s linear' : 'none'"
+      >
+        {{ currentMessage() }}
+      </div>
+      <div class="scanlines"></div>
+    </div>
+  </div>
+</div>

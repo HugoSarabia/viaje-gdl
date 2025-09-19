@@ -1,0 +1,147 @@
+.station-container {
+  position: absolute;
+  top: 0;
+  left: 130px;
+  z-index: 10;
+}
+
+.display-panel {
+  background: #1a1a1a;
+  //border: 8px solid #444;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
+  width: 500px;
+  max-width: 90vw;
+}
+
+.display-header {
+  //background: linear-gradient(90deg, #333 0%, #555 50%, #333 100%);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-bottom: 2px solid #666;
+}
+
+.led-indicator {
+  width: 10px;
+  height: 10px;
+  background: #ff3333;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff3333;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.station-title {
+  color: #d1d1d1;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.display-screen {
+  background: #000;
+  height: 110px;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #333;
+  margin: 10px;
+}
+
+.scrolling-text {
+  color: #ffcc00;
+  font-family: 'VT323', monospace;
+  font-size: 65px;
+  font-weight: bold;
+  line-height: 110px;
+  white-space: nowrap;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px #ffcc00;
+  position: absolute;
+  top: 0;
+  will-change: transform;
+}
+
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(255, 204, 0, 0.03) 2px,
+    rgba(255, 204, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  animation: flicker 0.15s infinite linear alternate;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.98;
+  }
+}
+
+.display-footer {
+  background: linear-gradient(90deg, #333 0%, #555 50%, #333 100%);
+  padding: 8px 20px;
+  border-top: 2px solid #666;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.time-display {
+  color: #00ff00;
+  font-size: 12px;
+  font-family: 'Digital-7', 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+/* Efecto de resplandor en los bordes */
+.display-screen::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffcc00, transparent, #ffcc00);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scrolling-text {
+    font-size: 20px;
+  }
+
+  .display-screen {
+    height: 80px;
+  }
+
+  .scrolling-text {
+    line-height: 80px;
+  }
+}
