@@ -26,6 +26,12 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              "src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": ["src/styles.scss"]

@@ -19,7 +19,6 @@ export class App implements OnInit {
   showAudioControls = true;
   audioInitialized = false;
 
-  // 🔧 SOLUCIÓN: Inicializar viewBox con las dimensiones reales de la imagen
   viewBox = { w: 1912, h: 955 }; // ← Usar las dimensiones reales desde el inicio
 
   // 🔧 Dimensiones reales de la imagen (mantenemos la referencia)
