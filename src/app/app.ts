@@ -1,5 +1,4 @@
 import { ChangeDetectorRef, Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TerminalComponent } from './components/terminal/terminal.component';
@@ -9,7 +8,7 @@ type Pane = { x: number; y: number; w: number; h: number; label?: string };
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, FormsModule, TerminalComponent],
+  imports: [CommonModule, FormsModule, TerminalComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
