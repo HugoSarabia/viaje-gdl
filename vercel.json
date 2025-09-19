@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "viaje-gdl",
   "builds": [
     {
       "src": "package.json",

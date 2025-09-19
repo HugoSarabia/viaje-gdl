@@ -107,7 +107,7 @@ export class App implements OnInit {
   ) {}
 
   ngOnInit() {
-    // 🔧 MEJORADO: Carga de imagen con callback que actualiza el estado
+    // MEJORADO: Carga de imagen con callback que actualiza el estado
     this.loadImageAndUpdateDimensions();
     // 🎵 Inicializar audio después de un pequeño delay
     setTimeout(() => {
